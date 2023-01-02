@@ -5,7 +5,6 @@ import CompressionForm from "../CompressionForm";
 import ToolOptions from "../ToolOptions";
 
 import Helper from "../../assets/svg/helper.svg";
-import Arrow2 from "../../assets/svg/arrow2.svg";
 
 import * as styles from "./styles.module.css";
 
@@ -21,7 +20,6 @@ const compressor = () => {
             </p>
           </article>
           <Helper className={styles.helper} />
-          <Arrow2 className={styles.arrow2} />
         </div>
         <DropZone />
         <ToolOptions />

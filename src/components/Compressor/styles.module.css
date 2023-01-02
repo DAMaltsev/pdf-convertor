@@ -24,13 +24,6 @@
   margin: auto;
 }
 
-.arrow2 {
-  position: absolute;
-  right: -85px;
-  top: 1.75rem;
-  z-index: 100;
-}
-
 .compressorArticle {
   position: absolute;
   text-align: left;

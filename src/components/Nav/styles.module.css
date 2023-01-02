@@ -13,12 +13,6 @@ nav {
   overflow-x: visible;
 }
 
-.headerArrow {
-  position: absolute;
-  top: -6px;
-  right: 2px;
-}
-
 .link {
   font-family: "Arial";
   font-style: normal;

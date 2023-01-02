@@ -12,7 +12,9 @@ const header = () => {
     <>
       <header>
         <div className={styles.wrapper}>
+
           <Logo />
+          <button className={styles.btn} onClick={() => { }}> All PDF Tools </button>
           <Nav></Nav>
         </div>
       </header>

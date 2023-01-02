@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { Link } from "gatsby";
 
 import Moon from "../../assets/svg/moon.svg";
-import Arrow1 from "../../assets/svg/arrow1.svg";
 
 import ThemeContext from "../../context/theme-context";
 
@@ -14,7 +13,6 @@ const Nav = () => {
   return (
     <div className={styles.container}>
       <nav>
-        <Arrow1 className={styles.headerArrow} />
         <Link className={styles.link} to="*">
           Desktop Version
         </Link>
@@ -25,7 +23,6 @@ const Nav = () => {
           <Moon className={styles.moonIcon} />
         </button>
       </nav>
-      <button onClick={() => {}}> All PDF Tools </button>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-
+import "normalize.css"
 import Layout from "../components/Layout";
 import Header from "../components/Header";
 import Compressor from "../components/Compressor";
