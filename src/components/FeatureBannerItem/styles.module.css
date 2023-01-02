@@ -1,0 +1,17 @@
+.featureWrapper {
+  display: flex;
+  align-items: center;
+
+  margin-left: 1rem;
+}
+
+.feature {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 1.1875rem;
+  color: var(--white);
+
+  margin-left: 0.625rem;
+}

@@ -1,0 +1,57 @@
+.container {
+  width: 100%;
+  background: var(--white);
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1180px;
+
+  margin: auto;
+  padding-top: 1rem;
+
+  position: relative;
+
+  overflow-x: visible;
+}
+
+.compressorHeader {
+  text-align: center;
+}
+
+.helper {
+  width: 80px;
+  margin: auto;
+}
+
+.arrow2 {
+  position: absolute;
+  right: -85px;
+  top: 1.75rem;
+  z-index: 100;
+}
+
+.compressorArticle {
+  position: absolute;
+  text-align: left;
+}
+
+.compressorHeading {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 33.18px;
+  line-height: 38px;
+  color: var(--black);
+}
+
+.compressorParagraph {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: #585858;
+
+  margin-top: 0.5rem;
+}

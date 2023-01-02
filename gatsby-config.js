@@ -3,7 +3,17 @@
  */
 module.exports = {
   siteMetadata: {
+    title: `PDF24Tools`,
     siteUrl: `https://www.yourdomain.tld`,
   },
-  plugins: [],
-}
+  plugins: [
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /svg/,
+        },
+      },
+    },
+  ],
+};

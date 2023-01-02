@@ -1,0 +1,86 @@
+.wrapper {
+  width: 100%;
+
+  background: var(--primary200);
+  text-align: center;
+
+  display: block;
+
+  padding-top: 40px;
+}
+
+.informationHeading {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 2.875rem;
+}
+
+.osContainer {
+  width: 500px;
+  height: 41px;
+
+  border-radius: 2.75rem;
+  margin: 0.75rem auto 0 auto;
+
+  background: var(--white);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.informationWrapper {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 66px;
+  margin-top: 3.25rem;
+
+  display: inline-block;
+}
+
+.informationBox {
+  padding: 1rem 1rem 0 1rem;
+  border: 1px solid var(--primary400);
+  border-radius: 5px;
+
+  margin-left: 39px;
+  margin-bottom: 33px;
+
+  width: 315px;
+  text-align: left;
+
+  float: left;
+}
+
+.informationBoxHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 1rem;
+}
+
+.informationTitle {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.125rem;
+  color: var(--dark800);
+
+  max-width: 135px;
+}
+
+.informationText {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 1.1875rem;
+  color: var(--primary700);
+
+  max-width: 250px;
+  margin-bottom: 2rem;
+}

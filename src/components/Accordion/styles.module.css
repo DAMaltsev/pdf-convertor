@@ -1,0 +1,61 @@
+.accordion {
+  height: 4rem;
+  border: 1px solid var(--primary600);
+
+  margin: 0 auto 0.5rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.accordion:hover {
+  background-color: var(--primary200);
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.accordionHeading {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.375rem;
+  color: var(--primary600);
+
+  align-items: center;
+  display: flex;
+}
+
+.accordionHeading:before {
+  content: "";
+  display: block;
+  width: 19px;
+  height: 64px;
+  background: var(--primary600);
+  float: left;
+
+  margin-right: 1.375rem;
+  position: relative;
+  top: -1px;
+}
+
+.toggleIcon {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.contentContainer {
+  display: none;
+}
+
+.accordionContent {
+  padding: 1rem;
+}

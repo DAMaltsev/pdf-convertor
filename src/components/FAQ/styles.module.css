@@ -1,0 +1,9 @@
+.container {
+  width: 100%;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1180px;
+  margin: 4rem auto 0 auto;
+}

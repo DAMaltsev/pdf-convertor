@@ -1,0 +1,46 @@
+.toolOption {
+  background: var(--primary500);
+  border: 1px solid var(--primary200);
+  border-radius: 4px;
+
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.125rem;
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+  float: left;
+
+  width: 219px;
+  height: 80px;
+
+  margin-right: 0.2rem;
+
+  text-align: left;
+}
+
+.toolOption:last-of-type {
+  margin-right: 0;
+}
+
+.toolOptionText {
+  max-width: 100px;
+
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.125rem;
+
+  color: var(--white);
+}
+
+.whiteStar {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+}

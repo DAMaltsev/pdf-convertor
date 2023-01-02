@@ -1,0 +1,39 @@
+.toolOptionsContainer {
+  width: 100%;
+
+  margin: 6rem 0 3.5rem 0;
+
+  background: var(--primary600);
+
+  border: 1px solid var(--primary400);
+  border-radius: 12px 12px 0px 0px;
+
+  display: inline-block;
+
+  text-align: center;
+}
+
+.toolOptionsWrapper {
+  margin-top: 1rem;
+
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.seeAllToolsLink {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.125rem;
+
+  margin: 1rem auto;
+
+  color: var(--white);
+}
+
+.arrowRight {
+  position: relative;
+  top: 2px;
+  margin-left: 1rem;
+}

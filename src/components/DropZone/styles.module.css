@@ -1,0 +1,16 @@
+.dropZone {
+  width: 100%;
+  background: var(--primary200);
+
+  border: 1px dashed var(--primary600);
+
+  margin: 2rem auto 0 auto;
+
+  position: relative;
+
+  overflow: visible;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

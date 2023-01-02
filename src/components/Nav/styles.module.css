@@ -1,0 +1,67 @@
+.container {
+  width: auto;
+  display: flex;
+
+  overflow: visible;
+}
+
+nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  overflow-x: visible;
+}
+
+.headerArrow {
+  position: absolute;
+  top: -6px;
+  right: 2px;
+}
+
+.link {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.125rem;
+
+  padding: 0 1.375rem 0 0;
+
+  color: var(--dark900);
+  text-decoration: none;
+}
+
+.moonButton {
+  width: auto;
+  height: auto;
+  background: none;
+  padding: 0;
+  margin: 0;
+
+  cursor: pointer;
+}
+
+.moonIcon path {
+  fill: var(--extra) !important;
+}
+
+button {
+  width: 8rem;
+  height: 2rem;
+  background: var(--primary600);
+
+  border: 0;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+
+  font-family: Arial;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.125rem;
+  color: var(--button-text);
+
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
