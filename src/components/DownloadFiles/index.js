@@ -3,7 +3,6 @@ import React from "react";
 import DownloadIcon from "../../assets/svg/download.svg";
 import TrashRed from "../../assets/svg/trashRed.svg";
 import Restart from "../../assets/svg/restart.svg";
-import Arrow3 from "../../assets/svg/arrow3.svg";
 
 import * as styles from "./styles.module.css";
 
@@ -35,7 +34,6 @@ const DownloadFiles = () => {
           </button>
         </div>
       </div>
-      <Arrow3 className={styles.arrow} />
     </div>
   );
 };
