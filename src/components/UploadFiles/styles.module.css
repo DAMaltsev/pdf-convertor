@@ -5,6 +5,7 @@
   align-items: center;
 
   margin: 2rem 0;
+  cursor: pointer;
 }
 
 .uploadFilesWrapper {
@@ -27,6 +28,7 @@
   width: 189px;
   height: 49px;
   background: var(--secondary500);
+  cursor: pointer;
 }
 
 .uploadFilesTextContainer {

@@ -7,10 +7,16 @@ import DropBox from "../../assets/png/dropbox.png";
 import GoogleDrive from "../../assets/png/googleDrive.png";
 
 import * as styles from "./styles.module.css";
+import { motion } from 'framer-motion'
 
 const UploadFiles = () => {
+
   return (
-    <div className={styles.filesContainer}>
+    <motion.div className={styles.filesContainer}
+      whileHover={{
+        scale: 1.05,
+        transition: { duration: 0.5 },
+      }}>
       <div className={styles.uploadFilesWrapper}>
         <UploadFilesIcon />
         <button className={styles.uploadFilesButton}>
@@ -18,7 +24,8 @@ const UploadFiles = () => {
           <ArrowDownPointer />
         </button>
         <span className={styles.uploadFilesDescription}>
-          or drag and drop files here
+          or drag and drop files he
+          re
         </span>
         <div className={styles.cloudProvidersContainer}>
           <img className={styles.cloudProvider} src={DropBox} alt="drop box" />
@@ -29,7 +36,7 @@ const UploadFiles = () => {
           />
         </div>
       </div>
-    </div>
+    </motion.div >
   );
 };
 

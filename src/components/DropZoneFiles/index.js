@@ -4,13 +4,13 @@ import UploadFiles from "../UploadFiles";
 import CompressFiles from "../CompressFiles";
 import DownloadFiles from "../DownloadFiles";
 
-const DropZoneFiles = ({ isInUploadState, isCompressionState, files }) => {
+const DropZoneFiles = ({ isInUploadState, isCompressionState, isDownloadState, files }) => {
   return (
-    <UploadFiles />
-    // <>
-    //   {isInUploadState && <UploadFiles />}
-    //   {isCompressionState && <CompressFiles />}
-    // </>
+    <>
+      {isInUploadState && <UploadFiles />}
+      {isCompressionState && <CompressFiles />}
+      {isDownloadState && <DownloadFiles />}
+    </>
   );
 };
 

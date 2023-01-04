@@ -1,13 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactSlider from "react-slider";
 import Switch from "react-switch";
 
 import * as styles from "./styles.module.css";
+import { motion } from 'framer-motion'
+import axios from 'axios'
 
-const CompressionForm = () => {
-  const switchToggleHandler = () => {
-    return;
+
+const CompressionForm = ({ uploadedPdfs, setUploaded, dropStates, dropState, setDropState }) => {
+
+  const [dpi, setDpi] = useState(75)
+  const [imageQ, setImageQ] = useState(75)
+  const [color, setColor] = useState(false)
+
+  const handleDpiChange = (e) => {
+    setDpi(e.target.value);
   };
+
+  const handleIqChange = (e) => {
+    setImageQ(e.target.value);
+  };
+
+  const switchToggleHandler = () => {
+    return setColor(current => !current);
+    console.log(color)
+  };
+
+  const compress = async (uploadedPdfs) => {
+
+    const header = {
+      'Content-Type': 'application/json; charset=UTF-8',
+    }
+
+    const payload = {
+      files: uploadedPdfs,
+      dpi: dpi,
+      imageQuality: imageQ,
+      mode: "normal",
+      colorModel: color,
+    }
+    console.log(payload)
+    console.log(uploadedPdfs)
+
+    await axios.post('https://filetool13.pdf24.org/client.php?action=compressPdf', {
+      header: header,
+      body: payload
+    })
+      .then((res) => {
+        console.log(res)
+      })
+      .catch((err) => console.log(err))
+    setDropState(dropStates.DOWNLOAD);
+  }
 
   return (
     <>
@@ -43,11 +87,9 @@ const CompressionForm = () => {
                     style={{
                       ...props.style,
                       background: state.index === 1 ? "#E7E0EC" : "#6750A4",
-                    }}
-                  ></div>
-                )}
-              />
-
+                    }}>
+                  </div>
+                )} />
               <label className={styles.sliderDescription}>
                 Big size <br /> High quality
               </label>
@@ -69,6 +111,8 @@ const CompressionForm = () => {
               id="quantity"
               min="1"
               max="100"
+              onChange={handleDpiChange}
+              value={dpi}
             />
           </div>
           <div className={styles.buttonWrapper}>
@@ -81,7 +125,8 @@ const CompressionForm = () => {
               id="quantity"
               min="1"
               max="100"
-              value={2}
+              onChange={handleIqChange}
+              value={imageQ}
             />
           </div>
           <div className={styles.buttonWrapper}>
@@ -103,7 +148,16 @@ const CompressionForm = () => {
           </div>
         </div>
       </div>
-      <button className={styles.compressionButton}>Compress</button>
+      <motion.button
+        whileHover={{
+          scale: 1.1,
+          transition: { duration: 1 },
+        }}
+        className={styles.compressionButton}
+        onClick={() => compress(uploadedPdfs)}
+      >
+        Compress
+      </motion.button>
     </>
   );
 };

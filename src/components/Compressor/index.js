@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import DropZone from "../DropZone";
 import CompressionForm from "../CompressionForm";
@@ -8,7 +8,18 @@ import Helper from "../../assets/svg/helper.svg";
 
 import * as styles from "./styles.module.css";
 
-const compressor = () => {
+
+const Compressor = () => {
+
+  const dropStates = {
+    UPLOAD: "UPLOAD",
+    CHOOSE_COMPRESSION: "CHOOSE_COMPRESSION",
+    DOWNLOAD: "DOWNLOAD",
+  };
+
+  const [dropState, setDropState] = useState(dropStates.UPLOAD);
+  const [uploadedPdfs, setUploaded] = useState(null)
+
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
@@ -21,12 +32,14 @@ const compressor = () => {
           </article>
           <Helper className={styles.helper} />
         </div>
-        <DropZone />
+        <DropZone dropStates={dropStates} dropState={dropState} setDropState={setDropState} uploadedPdfs={uploadedPdfs} setUploaded={setUploaded} />
+        {uploadedPdfs !== null &&
+          <CompressionForm dropStates={dropStates} dropState={dropState} setDropState={setDropState} uploadedPdfs={uploadedPdfs} />
+        }
         <ToolOptions />
-        {/* <CompressionForm /> */}
       </div>
     </div>
   );
 };
 
-export default compressor;
+export default Compressor;

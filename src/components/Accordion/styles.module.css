@@ -1,10 +1,10 @@
 .accordion {
-  height: 4rem;
+  /* height: 4rem; */
   border: 1px solid var(--primary600);
 
   margin: 0 auto 0.5rem auto;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: space-between;
   cursor: pointer;
 
@@ -16,6 +16,7 @@
 }
 
 .titleWrapper {
+  border-bottom: 0.1px solid var(--primary600);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -43,7 +44,7 @@
 
   margin-right: 1.375rem;
   position: relative;
-  top: -1px;
+  /* top: -1px; */
 }
 
 .toggleIcon {
@@ -52,9 +53,7 @@
   align-items: center;
 }
 
-.contentContainer {
-  display: none;
-}
+.contentContainer {}
 
 .accordionContent {
   padding: 1rem;

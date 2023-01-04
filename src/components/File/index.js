@@ -5,7 +5,8 @@ import Trash from "../../assets/svg/trash.svg";
 
 import * as styles from "./styles.module.css";
 
-const File = (props) => {
+const File = ({ uploadedPdfs, setUploaded }) => {
+
   return (
     <div className={styles.file}>
       <div className={styles.fileInnerWrapper}>

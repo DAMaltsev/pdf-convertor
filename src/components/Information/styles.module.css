@@ -5,7 +5,9 @@
   text-align: center;
 
   display: block;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding-top: 40px;
 }
 
@@ -36,8 +38,10 @@
   max-width: 1200px;
   padding: 0 66px;
   margin-top: 3.25rem;
-
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .informationBox {

@@ -9,8 +9,6 @@ const faq = () => {
     <div className={styles.container}>
       <div className={styles.wrapper}>
         <Accordion />
-        <Accordion />
-        <Accordion />
       </div>
     </div>
   );
