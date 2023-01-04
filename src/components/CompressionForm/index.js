@@ -42,9 +42,12 @@ const CompressionForm = ({ uploadedPdfs, setUploaded, dropStates, dropState, set
     console.log(payload)
     console.log(uploadedPdfs)
 
-    await axios.post('https://filetool13.pdf24.org/client.php?action=compressPdf', {
-      header: header,
-      body: payload
+    await axios.post('https://filetools13.pdf24.org/client.php?action=compressPdf', {
+      files: uploadedPdfs,
+      dpi: dpi,
+      imageQuality: imageQ,
+      mode: "normal",
+      colorModel: color,
     })
       .then((res) => {
         console.log(res)
