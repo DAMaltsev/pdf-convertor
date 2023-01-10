@@ -24,8 +24,7 @@ const UploadFiles = () => {
           <ArrowDownPointer />
         </button>
         <span className={styles.uploadFilesDescription}>
-          or drag and drop files he
-          re
+          or drag and drop files here
         </span>
         <div className={styles.cloudProvidersContainer}>
           <img className={styles.cloudProvider} src={DropBox} alt="drop box" />

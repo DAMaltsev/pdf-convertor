@@ -3,15 +3,21 @@ import ReactSlider from "react-slider";
 import Switch from "react-switch";
 
 import * as styles from "./styles.module.css";
-import { motion } from 'framer-motion'
-import axios from 'axios'
+import { motion } from "framer-motion";
+import axios from "axios";
 
-
-const CompressionForm = ({ uploadedPdfs, setUploaded, dropStates, dropState, setDropState }) => {
-
-  const [dpi, setDpi] = useState(75)
-  const [imageQ, setImageQ] = useState(75)
-  const [color, setColor] = useState(false)
+const CompressionForm = ({
+  uploadedPdfs,
+  setUploaded,
+  setJobId,
+  jobId,
+  dropStates,
+  dropState,
+  setDropState,
+}) => {
+  const [dpi, setDpi] = useState(75);
+  const [imageQ, setImageQ] = useState(75);
+  const [color, setColor] = useState(false);
 
   const handleDpiChange = (e) => {
     setDpi(e.target.value);
@@ -22,15 +28,14 @@ const CompressionForm = ({ uploadedPdfs, setUploaded, dropStates, dropState, set
   };
 
   const switchToggleHandler = () => {
-    return setColor(current => !current);
-    console.log(color)
+    return setColor((current) => !current);
+    console.log(color);
   };
 
   const compress = async (uploadedPdfs) => {
-
     const header = {
-      'Content-Type': 'application/json; charset=UTF-8',
-    }
+      "Content-Type": "application/json; charset=UTF-8",
+    };
 
     const payload = {
       files: uploadedPdfs,
@@ -38,23 +43,43 @@ const CompressionForm = ({ uploadedPdfs, setUploaded, dropStates, dropState, set
       imageQuality: imageQ,
       mode: "normal",
       colorModel: color,
-    }
-    console.log(payload)
-    console.log(uploadedPdfs)
+    };
+    console.log(payload);
+    console.log(uploadedPdfs);
 
-    await axios.post('https://filetools13.pdf24.org/client.php?action=compressPdf', {
-      files: uploadedPdfs,
-      dpi: dpi,
-      imageQuality: imageQ,
-      mode: "normal",
-      colorModel: color,
-    })
-      .then((res) => {
-        console.log(res)
+    await axios
+      .post("https://filetools13.pdf24.org/client.php?action=compressPdf", {
+        files: uploadedPdfs,
+        dpi: dpi,
+        imageQuality: imageQ,
+        mode: "normal",
+        colorModel: color,
       })
-      .catch((err) => console.log(err))
-    setDropState(dropStates.DOWNLOAD);
-  }
+      .then((res) => {
+        const { jobId } = res.data;
+        setJobId(jobId);
+        // Poll for the result
+        const poll = async (id) => {
+          await axios
+            .get(
+              `https://filetools13.pdf24.org/client.php?action=getStatus&jobId=${id}`
+            )
+            .then((res) => {
+              if (res.data.status === "done") {
+                setDropState(dropStates.DOWNLOAD);
+              } else {
+                setTimeout(() => {
+                  poll(id);
+                }, 1000);
+              }
+            })
+            .catch((err) => console.log(err));
+        };
+
+        poll(jobId);
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <>
@@ -90,9 +115,10 @@ const CompressionForm = ({ uploadedPdfs, setUploaded, dropStates, dropState, set
                     style={{
                       ...props.style,
                       background: state.index === 1 ? "#E7E0EC" : "#6750A4",
-                    }}>
-                  </div>
-                )} />
+                    }}
+                  ></div>
+                )}
+              />
               <label className={styles.sliderDescription}>
                 Big size <br /> High quality
               </label>

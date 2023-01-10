@@ -2,19 +2,33 @@ import React from "react";
 
 import * as styles from "./styles.module.css";
 
-const DropZoneList = ({ step, setStep }) => {
+const DropZoneList = ({
+  dropStates,
+  dropState,
+  setDropState,
+  step,
+  setStep, }) => {
   return (
     <ul>
       <li>
-        <div className={styles.listItemContainer}>1. Upload your PDFs</div>
+        {
+          dropState === dropStates.UPLOAD &&
+          <div className={styles.listItemContainer}>1. Upload your PDFs</div>
+        }
       </li>
       <li>
-        <div className={styles.listItemContainer}>2. Choose compression</div>
+        {
+          dropState === dropStates.CHOOSE_COMPRESSION &&
+          <div className={styles.listItemContainer}>2. Choose compression</div>
+        }
       </li>
       <li>
-        <div className={styles.listItemContainer}>3. Done</div>
+        {
+          dropState === dropStates.DOWNLOAD &&
+          < div className={styles.listItemContainer}>3. Done</div>
+        }
       </li>
-    </ul>
+    </ul >
   );
 };
 

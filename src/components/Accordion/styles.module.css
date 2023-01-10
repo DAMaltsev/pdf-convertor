@@ -56,5 +56,11 @@
 .contentContainer {}
 
 .accordionContent {
-  padding: 1rem;
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: #585858;
+  padding: 1.5rem;
 }
